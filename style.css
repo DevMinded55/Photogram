@@ -39,7 +39,6 @@ body {
         object-fit: cover;
         border-radius: 1rem;
         display: flex;
-        
     }
     gap: 1rem;
     display: flex;
@@ -79,4 +78,49 @@ body {
         width: 4rem;
         margin: 1rem;
     }
+}
+
+.overlay{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 12.5rem;
+    z-index: 1;
+    background-color: rgba(5, 23, 31, 0.9);
+    width: 100%;
+    
+div{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+}
+.d-none{
+    display: none;
+}
+.d-yes{
+    display: block;
+}
+
+.close_overlay {
+    position: absolute;
+    z-index: 99;
+    top: 0rem;
+    right: 40rem;
+    height: 5rem;
+    width: auto;
+}
+
+#overlay_pic{
+    height: 64rem;
+    width: auto;
+}
+.arrows{
+    height: 6rem;
+    width: 6rem;
 }
