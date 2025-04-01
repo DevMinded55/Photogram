@@ -1,24 +1,38 @@
 
 
-let pics = ["0","1","2","3","4","5","6","7","8","9","10","11"];
+const pics = [
+    "balloons1.jpg",
+    "balloons2.jpg",
+    "beachbridge.jpg",
+    "cityoverview.jpg",
+    "forrestView.jpg",
+    "lake1.jpg",
+    "lakeboat.jpg",
+    "mountains.jpg",
+    "mountains2.jpg",
+    "sandrocks.jpg",
+    "snowmountain.jpg",
+    "waterfall.jpg"]
+
 let actualIndex = 0;
 
-function render(i){
+function render(){
     let picBox = document.getElementById("pics");
     for (let i = 0; i < pics.length; i++){
-        picBox.innerHTML += getIMG(i);
+        picBox.innerHTML += getImg(i);
     }
 }
 
-function getIMG(index){
+function getImg(index){
 
     return `
-        <img onclick="render_overlay(${index})" class="pictures" src="./img/${index}.jpg" alt="">`
+        <img onclick="renderOverlay(${index})" class="pictures" src="./img/${pics[index]}" alt="">`;
+        console.log();
+        
     }
 
-
-function render_overlay(index){
-    actualIndex = index
+function renderOverlay(index){
+    actualIndex = index;
     clearOverlay();
     toggleOverlay();
     let overlayBox = document.getElementById("overlay_section");
@@ -29,12 +43,12 @@ function showOverlay(index){
     
     return `
             <div onclick="overlayProtection(event)" class="overlay_container">
-                <img id="overlay_pic" src="./img/${index}.jpg" alt="">
+                <img id="overlay_pic" src="./img/${pics[index]}" alt="">
                 <div class="arrow_container">
-                <img onclick="prevPic()" class="arrows" src="./img/arrow-left.png" alt="">
-                <img onclick="nextPic()" class="arrows" src="./img/arrow-right.png" alt="">
+                    <img onclick="prevPic()" class="arrows" src="./img/arrow-left.png" alt="">
+                    <img onclick="nextPic()" class="arrows" src="./img/arrow-right.png" alt="">
                 </div>
-        </div>`
+            </div>`;
 }
 
 function toggleOverlay(){
@@ -42,7 +56,7 @@ function toggleOverlay(){
 }
 
 function clearOverlay(){
-    overlayEmpty = document.getElementById("overlay_section").innerHTML = "";
+    document.getElementById("overlay_section").innerHTML = "";
 }
 
 function overlayProtection(event){
@@ -52,19 +66,19 @@ function overlayProtection(event){
 function nextPic(){
     if (actualIndex < pics.length){
         actualIndex++;
-        FirstLastPic();
+        firstLastPic();
         updateOverlay(actualIndex);
     }
 }
 function prevPic(){
     if (actualIndex < pics.length){
         actualIndex--;
-        FirstLastPic();
+        firstLastPic();
         updateOverlay(actualIndex);
     }
 }
 
-function FirstLastPic(){
+function firstLastPic(){
     if (actualIndex >= pics.length){
         actualIndex = 0;
     }else if(actualIndex < 0){
@@ -73,5 +87,5 @@ function FirstLastPic(){
 }
 
 function updateOverlay(){
-    document.getElementById("overlay_pic").src = `./img/${actualIndex}.jpg`;
+    document.getElementById("overlay_pic").src = `./img/${pics[actualIndex]}`;
 }

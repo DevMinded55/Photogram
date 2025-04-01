@@ -89,6 +89,7 @@ body {
     }
     gap: 1rem;
     display: flex;
+    justify-content: center;
     flex-wrap:wrap;
     padding-left: 5rem;
     padding-right: 5rem;
@@ -180,18 +181,20 @@ body {
 
 .overlay{
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: rgba(5, 23, 31, 0.9);
     top: 0;
     left:0;
-    height: 100dvh;
+    height: 100vh;
+    position: fixed;
     width: 100%;
     z-index: 900;
 }
 
 .overlay_container{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -273,6 +276,7 @@ body {
     }
     @media (max-width: 485px){
         height: 24rem;
+        width: 24rem;
     }
     @media (max-width: 410px){
         height: 20rem;
