@@ -28,7 +28,6 @@ function render_overlay(index){
 function showOverlay(index){
     
     return `
-            <img onclick="toggleOverlay()" class="close_overlay" src="./img/x.png" alt="">
             <div>
             <img onclick="prevPic()" class="arrows" src="./img/arrow-left.png" alt="">
             <img id="overlay_pic" src="./img/${index}.jpg" alt="">
