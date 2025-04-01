@@ -31,13 +31,13 @@ body {
 .headline_section {
     font-size: 5rem;
     color: white;
-    margin-bottom: 16rem;
+    margin-bottom: 14rem;
 }
 
 #pics {
     img {
-        height: 14rem;
-        width: 14rem;
+        height: 18rem;
+        width: 18rem;
         object-fit: cover;
         border-radius: 1rem;
         display: flex;
@@ -47,6 +47,7 @@ body {
     flex-wrap:wrap;
     padding-left: 5rem;
     padding-right: 5rem;
+    flex: 1;
 }
 
 .nav {
@@ -95,10 +96,11 @@ body {
 div{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
     gap: 10rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 30rem;
+    padding-right: 30rem;
 }
 }
 

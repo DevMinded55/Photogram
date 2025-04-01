@@ -47,22 +47,22 @@ function clearOverlay(){
 function nextPic(){
     if (actualIndex < pics.length){
         actualIndex++;
-        FirstLastPic()
+        FirstLastPic();
         updateOverlay(actualIndex);
     }
 }
 function prevPic(){
     if (actualIndex < pics.length){
         actualIndex--;
-        FirstLastPic()
+        FirstLastPic();
         updateOverlay(actualIndex);
     }
 }
 
 function FirstLastPic(){
-    if (actualIndex = pics.length){
+    if (actualIndex >= pics.length){
         actualIndex = 0;
-    }else if(actualIndex < pics.length){
+    }else if(actualIndex < 0){
         actualIndex = pics.length-1;
     }
 }
