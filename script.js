@@ -13,7 +13,7 @@ function render(i){
 function getIMG(index){
 
     return `
-        <img onclick="render_overlay(${index})" class="pictures" id="${index}" src="./img/${index}.jpg" alt="">`
+        <img onclick="render_overlay(${index})" class="pictures" src="./img/${index}.jpg" alt="">`
     }
 
 
@@ -28,10 +28,12 @@ function render_overlay(index){
 function showOverlay(index){
     
     return `
-            <div>
-            <img onclick="prevPic()" class="arrows" src="./img/arrow-left.png" alt="">
-            <img id="overlay_pic" src="./img/${index}.jpg" alt="">
-            <img onclick="nextPic()" class="arrows" src="./img/arrow-right.png" alt="">
+            <div onclick="overlayProtection(event)" class="overlay_container">
+                <img id="overlay_pic" src="./img/${index}.jpg" alt="">
+                <div class="arrow_container">
+                <img onclick="prevPic()" class="arrows" src="./img/arrow-left.png" alt="">
+                <img onclick="nextPic()" class="arrows" src="./img/arrow-right.png" alt="">
+                </div>
         </div>`
 }
 
@@ -41,6 +43,10 @@ function toggleOverlay(){
 
 function clearOverlay(){
     overlayEmpty = document.getElementById("overlay_section").innerHTML = "";
+}
+
+function overlayProtection(event){
+    event.stopPropagation();
 }
 
 function nextPic(){
