@@ -8,14 +8,18 @@
 html {
     font-size: 10px;
     
-}
+
 
 body {
     height: 100dvh;
     width: 100%;
     display: flex;
     flex-direction: column;
-}
+
+    @media (max-width: 1229px){
+        height: auto;
+    }
+
 
 header{
     padding-left: 5rem;
@@ -37,19 +41,36 @@ header{
 main {
     background-color: #05171f;
     padding-top: 6rem;
+    
     display: flex;
     flex:1;
     flex-direction: column;
     align-items: center;
     justify-content: top;
+
+    @media (max-width: 1229px){
+        padding-bottom: 4rem;
+    }
+    @media (max-width: 527px){
+        font-size: 6.5px;
+    }
+    @media (max-width: 435px){
+        font-size: 5.5px;
+    }
+    @media (max-width: 380px){
+        font-size: 5px;
+    }
+    @media (max-width: 340px){
+        font-size: 4.5px;
+    }
 }
 
 .headline_section {
-    font-size: 5rem;
+    font-size: 5em;
     color: white;
     margin-bottom: 10rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    
+    
 }
 
 #pics {
@@ -64,9 +85,25 @@ main {
     display: flex;
     justify-content: center;
     flex-wrap:wrap;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 5em;
+    padding-right: 5em;
     flex: 1;
+    @media (max-width: 406px){
+        flex-direction: column;
+        img{
+            height: 26rem;
+            width: 26rem;
+        }
+        gap: 2rem;
+    }
+    @media (max-width: 340px){
+        flex-direction: column;
+        img{
+            height: 22rem;
+            width: 22rem;
+        }
+        gap: 2rem;
+    }
 }
 
 .footer {
@@ -94,6 +131,27 @@ main {
     position: fixed;
     width: 100%;
     z-index: 900;
+    @media (max-width: 1050px){
+        font-size: 9px;
+    }
+    @media (max-width: 945px){
+        font-size: 8px;
+    }
+    @media (max-width: 830px){
+        font-size: 7px;
+    }
+    @media (max-width: 725px){
+        font-size: 6px;
+    }
+    @media (max-width: 630px){
+        font-size: 5px;
+    }
+    @media (max-width: 520px){
+        font-size: 4px;
+    }
+    @media (max-width: 420px){
+        font-size: 3px;
+    }
 }
 
 .overlay_container{
@@ -158,11 +216,29 @@ main {
 }
 
 #overlay_pic{
-    height: 64rem;
+    height: 64em;
     width: auto;
     object-fit: cover;
 }
 .arrows{
     height: 6rem;
     width: 6rem;
+}
+
+}
+@media (max-width: 698px){
+    font-size: 9px;
+}
+@media (max-width: 630px){
+    font-size: 8px;
+    body {
+        header{
+                justify-content: center;
+            }
+    }
+}
+@media (max-width: 562px){
+    font-size: 7.5px;
+}
+
 }
